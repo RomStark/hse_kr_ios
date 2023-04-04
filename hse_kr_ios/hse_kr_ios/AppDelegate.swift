@@ -7,6 +7,8 @@
 
 import UIKit
 import CoreData
+import FirebaseCore
+import FirebaseAuth
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,10 +19,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
 
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = ViewController()
-        window?.makeKeyAndVisible()
-
+        FirebaseApp.configure()
+        Auth.auth().addStateDidChangeListener { [weak self] auth, user in
+            if user == nil  {
+                self?.showAuth()
+            } else {
+                self?.showApp()
+            }
+        }
+        
         return true
+    }
+    
+    private func showAuth() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let vc = AuthViewController()
+        let navcontroller = UINavigationController(rootViewController: vc)
+        window?.rootViewController = navcontroller
+        AuthAssembly(navigationController: navcontroller).assembly(viewController: vc)
+        window?.makeKeyAndVisible()
+    }
+    
+    private func showApp() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let vc = CharityTableViewController()
+        let navcontroller = UINavigationController(rootViewController: vc)
+        window?.rootViewController = navcontroller
+        CharityTableAssembly(navigationController: navcontroller).assembly(viewController: vc)
+        window?.makeKeyAndVisible()
     }
 }
