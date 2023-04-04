@@ -8,20 +8,79 @@
 
 /* Begin PBXBuildFile section */
 		00C5A73129D4707800907A91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A73029D4707800907A91 /* AppDelegate.swift */; };
-		00C5A73529D4707800907A91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A73429D4707800907A91 /* ViewController.swift */; };
+		00C5A73529D4707800907A91 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A73429D4707800907A91 /* StartViewController.swift */; };
 		00C5A73B29D4707800907A91 /* hse_kr_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A73929D4707800907A91 /* hse_kr_ios.xcdatamodeld */; };
 		00C5A73D29D4707A00907A91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00C5A73C29D4707A00907A91 /* Assets.xcassets */; };
 		00C5A74029D4707A00907A91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C5A73E29D4707A00907A91 /* LaunchScreen.storyboard */; };
+		00C5A74929D5FB1B00907A91 /* StartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A74829D5FB1B00907A91 /* StartPresenter.swift */; };
+		00C5A74B29D5FB5C00907A91 /* StartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A74A29D5FB5C00907A91 /* StartRouter.swift */; };
+		00C5A74D29D5FEF400907A91 /* StartInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A74C29D5FEF400907A91 /* StartInteractor.swift */; };
+		00C5A75029D6687300907A91 /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A74F29D6687300907A91 /* AuthAssembly.swift */; };
+		00C5A75429D668EE00907A91 /* Assemblying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A75329D668EE00907A91 /* Assemblying.swift */; };
+		00C5A75629D66B0200907A91 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A75529D66B0200907A91 /* AuthViewController.swift */; };
+		00C5A75829D66B1200907A91 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A75729D66B1200907A91 /* AuthPresenter.swift */; };
+		00C5A75A29D66B2100907A91 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A75929D66B2100907A91 /* AuthInteractor.swift */; };
+		00C5A75C29D66B2E00907A91 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A75B29D66B2E00907A91 /* AuthRouter.swift */; };
+		00C5A75E29D916C200907A91 /* StartAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A75D29D916C200907A91 /* StartAssembly.swift */; };
+		00C5A76229DA6F2300907A91 /* StartCheckIDLanWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A76129DA6F2300907A91 /* StartCheckIDLanWorker.swift */; };
+		00C5A76429DA70FF00907A91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00C5A76329DA70FF00907A91 /* GoogleService-Info.plist */; };
+		00C5A76729DA73FE00907A91 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 00C5A76629DA73FE00907A91 /* FirebaseAnalytics */; };
+		00C5A76929DA73FE00907A91 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 00C5A76829DA73FE00907A91 /* FirebaseAuth */; };
+		00C5A76B29DA73FE00907A91 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 00C5A76A29DA73FE00907A91 /* FirebaseDatabase */; };
+		00C5A76D29DA73FE00907A91 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 00C5A76C29DA73FE00907A91 /* FirebaseFirestore */; };
+		00C5A76F29DA73FE00907A91 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 00C5A76E29DA73FE00907A91 /* FirebaseStorage */; };
+		00C5A77329DAB6AA00907A91 /* CharityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A77229DAB6AA00907A91 /* CharityTableViewController.swift */; };
+		00C5A77529DAB6C700907A91 /* CharityTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A77429DAB6C700907A91 /* CharityTablePresenter.swift */; };
+		00C5A77729DAB6E400907A91 /* CharityTableInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A77629DAB6E400907A91 /* CharityTableInteractor.swift */; };
+		00C5A77929DAB6F200907A91 /* CharityTableRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A77829DAB6F200907A91 /* CharityTableRouter.swift */; };
+		00C5A77B29DAB70300907A91 /* CharityTableAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A77A29DAB70300907A91 /* CharityTableAssembly.swift */; };
+		00C5A77E29DAE66000907A91 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A77D29DAE66000907A91 /* RegistrationViewController.swift */; };
+		00C5A78029DAE69300907A91 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A77F29DAE69300907A91 /* RegistrationPresenter.swift */; };
+		00C5A78229DAE78100907A91 /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A78129DAE78100907A91 /* RegistrationInteractor.swift */; };
+		00C5A78429DAE86000907A91 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A78329DAE86000907A91 /* RegistrationRouter.swift */; };
+		00C5A78629DAE94900907A91 /* RegistrationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A78529DAE94900907A91 /* RegistrationAssembly.swift */; };
+		00C5A78929DAEFDA00907A91 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A78829DAEFDA00907A91 /* Extensions.swift */; };
+		00C5A78D29DB96FA00907A91 /* RegistrationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A78C29DB96FA00907A91 /* RegistrationWorker.swift */; };
+		00C5A79129DB978700907A91 /* AuthLanWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A79029DB978700907A91 /* AuthLanWorker.swift */; };
+		00C5A79329DB9AC100907A91 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A79229DB9AC100907A91 /* Errors.swift */; };
+		00C5A79729DBA4A200907A91 /* AppLanWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A79629DBA4A200907A91 /* AppLanWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		00C5A72D29D4707800907A91 /* hse_kr_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hse_kr_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C5A73029D4707800907A91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		00C5A73429D4707800907A91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		00C5A73429D4707800907A91 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		00C5A73A29D4707800907A91 /* hse_kr_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hse_kr_ios.xcdatamodel; sourceTree = "<group>"; };
 		00C5A73C29D4707A00907A91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00C5A73F29D4707A00907A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00C5A74129D4707A00907A91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00C5A74829D5FB1B00907A91 /* StartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresenter.swift; sourceTree = "<group>"; };
+		00C5A74A29D5FB5C00907A91 /* StartRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouter.swift; sourceTree = "<group>"; };
+		00C5A74C29D5FEF400907A91 /* StartInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartInteractor.swift; sourceTree = "<group>"; };
+		00C5A74F29D6687300907A91 /* AuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
+		00C5A75329D668EE00907A91 /* Assemblying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assemblying.swift; sourceTree = "<group>"; };
+		00C5A75529D66B0200907A91 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		00C5A75729D66B1200907A91 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		00C5A75929D66B2100907A91 /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
+		00C5A75B29D66B2E00907A91 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		00C5A75D29D916C200907A91 /* StartAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAssembly.swift; sourceTree = "<group>"; };
+		00C5A76129DA6F2300907A91 /* StartCheckIDLanWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCheckIDLanWorker.swift; sourceTree = "<group>"; };
+		00C5A76329DA70FF00907A91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		00C5A77229DAB6AA00907A91 /* CharityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityTableViewController.swift; sourceTree = "<group>"; };
+		00C5A77429DAB6C700907A91 /* CharityTablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityTablePresenter.swift; sourceTree = "<group>"; };
+		00C5A77629DAB6E400907A91 /* CharityTableInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityTableInteractor.swift; sourceTree = "<group>"; };
+		00C5A77829DAB6F200907A91 /* CharityTableRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityTableRouter.swift; sourceTree = "<group>"; };
+		00C5A77A29DAB70300907A91 /* CharityTableAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityTableAssembly.swift; sourceTree = "<group>"; };
+		00C5A77D29DAE66000907A91 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		00C5A77F29DAE69300907A91 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		00C5A78129DAE78100907A91 /* RegistrationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
+		00C5A78329DAE86000907A91 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
+		00C5A78529DAE94900907A91 /* RegistrationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAssembly.swift; sourceTree = "<group>"; };
+		00C5A78829DAEFDA00907A91 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		00C5A78C29DB96FA00907A91 /* RegistrationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationWorker.swift; sourceTree = "<group>"; };
+		00C5A79029DB978700907A91 /* AuthLanWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLanWorker.swift; sourceTree = "<group>"; };
+		00C5A79229DB9AC100907A91 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		00C5A79629DBA4A200907A91 /* AppLanWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +88,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C5A76B29DA73FE00907A91 /* FirebaseDatabase in Frameworks */,
+				00C5A76D29DA73FE00907A91 /* FirebaseFirestore in Frameworks */,
+				00C5A76729DA73FE00907A91 /* FirebaseAnalytics in Frameworks */,
+				00C5A76F29DA73FE00907A91 /* FirebaseStorage in Frameworks */,
+				00C5A76929DA73FE00907A91 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,14 +118,161 @@
 		00C5A72F29D4707800907A91 /* hse_kr_ios */ = {
 			isa = PBXGroup;
 			children = (
+				00C5A75129D668C000907A91 /* common */,
+				00C5A74729D5FAA500907A91 /* Start */,
+				00C5A77C29DAE61F00907A91 /* Registration */,
+				00C5A74E29D6685B00907A91 /* Auth */,
+				00C5A77029DAB66D00907A91 /* App */,
 				00C5A73029D4707800907A91 /* AppDelegate.swift */,
-				00C5A73429D4707800907A91 /* ViewController.swift */,
+				00C5A76329DA70FF00907A91 /* GoogleService-Info.plist */,
 				00C5A73C29D4707A00907A91 /* Assets.xcassets */,
 				00C5A73E29D4707A00907A91 /* LaunchScreen.storyboard */,
 				00C5A74129D4707A00907A91 /* Info.plist */,
 				00C5A73929D4707800907A91 /* hse_kr_ios.xcdatamodeld */,
 			);
 			path = hse_kr_ios;
+			sourceTree = "<group>";
+		};
+		00C5A74729D5FAA500907A91 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A75F29DA6E7300907A91 /* Workers */,
+				00C5A73429D4707800907A91 /* StartViewController.swift */,
+				00C5A74829D5FB1B00907A91 /* StartPresenter.swift */,
+				00C5A74A29D5FB5C00907A91 /* StartRouter.swift */,
+				00C5A74C29D5FEF400907A91 /* StartInteractor.swift */,
+				00C5A75D29D916C200907A91 /* StartAssembly.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		00C5A74E29D6685B00907A91 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A78E29DB977100907A91 /* Workers */,
+				00C5A74F29D6687300907A91 /* AuthAssembly.swift */,
+				00C5A75529D66B0200907A91 /* AuthViewController.swift */,
+				00C5A75729D66B1200907A91 /* AuthPresenter.swift */,
+				00C5A75929D66B2100907A91 /* AuthInteractor.swift */,
+				00C5A75B29D66B2E00907A91 /* AuthRouter.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		00C5A75129D668C000907A91 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A78829DAEFDA00907A91 /* Extensions.swift */,
+				00C5A75229D668D200907A91 /* Protocols */,
+				00C5A79229DB9AC100907A91 /* Errors.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		00C5A75229D668D200907A91 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A75329D668EE00907A91 /* Assemblying.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		00C5A75F29DA6E7300907A91 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A76029DA6E7F00907A91 /* Lan */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		00C5A76029DA6E7F00907A91 /* Lan */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A76129DA6F2300907A91 /* StartCheckIDLanWorker.swift */,
+			);
+			path = Lan;
+			sourceTree = "<group>";
+		};
+		00C5A77029DAB66D00907A91 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A77129DAB68400907A91 /* CharityTable */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		00C5A77129DAB68400907A91 /* CharityTable */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A79429DBA48800907A91 /* Workers */,
+				00C5A77229DAB6AA00907A91 /* CharityTableViewController.swift */,
+				00C5A77429DAB6C700907A91 /* CharityTablePresenter.swift */,
+				00C5A77629DAB6E400907A91 /* CharityTableInteractor.swift */,
+				00C5A77829DAB6F200907A91 /* CharityTableRouter.swift */,
+				00C5A77A29DAB70300907A91 /* CharityTableAssembly.swift */,
+			);
+			path = CharityTable;
+			sourceTree = "<group>";
+		};
+		00C5A77C29DAE61F00907A91 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A78A29DB96DB00907A91 /* Workers */,
+				00C5A77D29DAE66000907A91 /* RegistrationViewController.swift */,
+				00C5A77F29DAE69300907A91 /* RegistrationPresenter.swift */,
+				00C5A78129DAE78100907A91 /* RegistrationInteractor.swift */,
+				00C5A78329DAE86000907A91 /* RegistrationRouter.swift */,
+				00C5A78529DAE94900907A91 /* RegistrationAssembly.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		00C5A78A29DB96DB00907A91 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A78B29DB96E600907A91 /* Lan */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		00C5A78B29DB96E600907A91 /* Lan */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A78C29DB96FA00907A91 /* RegistrationWorker.swift */,
+			);
+			path = Lan;
+			sourceTree = "<group>";
+		};
+		00C5A78E29DB977100907A91 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A78F29DB977700907A91 /* Lan */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		00C5A78F29DB977700907A91 /* Lan */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A79029DB978700907A91 /* AuthLanWorker.swift */,
+			);
+			path = Lan;
+			sourceTree = "<group>";
+		};
+		00C5A79429DBA48800907A91 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A79529DBA49000907A91 /* Lan */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		00C5A79529DBA49000907A91 /* Lan */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A79629DBA4A200907A91 /* AppLanWorker.swift */,
+			);
+			path = Lan;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +291,13 @@
 			dependencies = (
 			);
 			name = hse_kr_ios;
+			packageProductDependencies = (
+				00C5A76629DA73FE00907A91 /* FirebaseAnalytics */,
+				00C5A76829DA73FE00907A91 /* FirebaseAuth */,
+				00C5A76A29DA73FE00907A91 /* FirebaseDatabase */,
+				00C5A76C29DA73FE00907A91 /* FirebaseFirestore */,
+				00C5A76E29DA73FE00907A91 /* FirebaseStorage */,
+			);
 			productName = hse_kr_ios;
 			productReference = 00C5A72D29D4707800907A91 /* hse_kr_ios.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +326,9 @@
 				Base,
 			);
 			mainGroup = 00C5A72429D4707800907A91;
+			packageReferences = (
+				00C5A76529DA73FE00907A91 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 00C5A72E29D4707800907A91 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -124,6 +345,7 @@
 			files = (
 				00C5A74029D4707A00907A91 /* LaunchScreen.storyboard in Resources */,
 				00C5A73D29D4707A00907A91 /* Assets.xcassets in Resources */,
+				00C5A76429DA70FF00907A91 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,8 +356,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00C5A73529D4707800907A91 /* ViewController.swift in Sources */,
+				00C5A78429DAE86000907A91 /* RegistrationRouter.swift in Sources */,
+				00C5A77329DAB6AA00907A91 /* CharityTableViewController.swift in Sources */,
+				00C5A75829D66B1200907A91 /* AuthPresenter.swift in Sources */,
+				00C5A77B29DAB70300907A91 /* CharityTableAssembly.swift in Sources */,
+				00C5A75E29D916C200907A91 /* StartAssembly.swift in Sources */,
+				00C5A74B29D5FB5C00907A91 /* StartRouter.swift in Sources */,
+				00C5A74D29D5FEF400907A91 /* StartInteractor.swift in Sources */,
+				00C5A76229DA6F2300907A91 /* StartCheckIDLanWorker.swift in Sources */,
+				00C5A78D29DB96FA00907A91 /* RegistrationWorker.swift in Sources */,
+				00C5A78629DAE94900907A91 /* RegistrationAssembly.swift in Sources */,
+				00C5A78029DAE69300907A91 /* RegistrationPresenter.swift in Sources */,
+				00C5A75A29D66B2100907A91 /* AuthInteractor.swift in Sources */,
+				00C5A75429D668EE00907A91 /* Assemblying.swift in Sources */,
+				00C5A73529D4707800907A91 /* StartViewController.swift in Sources */,
+				00C5A78229DAE78100907A91 /* RegistrationInteractor.swift in Sources */,
+				00C5A74929D5FB1B00907A91 /* StartPresenter.swift in Sources */,
+				00C5A77929DAB6F200907A91 /* CharityTableRouter.swift in Sources */,
+				00C5A79129DB978700907A91 /* AuthLanWorker.swift in Sources */,
+				00C5A77529DAB6C700907A91 /* CharityTablePresenter.swift in Sources */,
 				00C5A73B29D4707800907A91 /* hse_kr_ios.xcdatamodeld in Sources */,
+				00C5A79329DB9AC100907A91 /* Errors.swift in Sources */,
+				00C5A77E29DAE66000907A91 /* RegistrationViewController.swift in Sources */,
+				00C5A77729DAB6E400907A91 /* CharityTableInteractor.swift in Sources */,
+				00C5A78929DAEFDA00907A91 /* Extensions.swift in Sources */,
+				00C5A75029D6687300907A91 /* AuthAssembly.swift in Sources */,
+				00C5A75629D66B0200907A91 /* AuthViewController.swift in Sources */,
+				00C5A79729DBA4A200907A91 /* AppLanWorker.swift in Sources */,
+				00C5A75C29D66B2E00907A91 /* AuthRouter.swift in Sources */,
 				00C5A73129D4707800907A91 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +592,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00C5A76529DA73FE00907A91 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00C5A76629DA73FE00907A91 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00C5A76529DA73FE00907A91 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		00C5A76829DA73FE00907A91 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00C5A76529DA73FE00907A91 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		00C5A76A29DA73FE00907A91 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00C5A76529DA73FE00907A91 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		00C5A76C29DA73FE00907A91 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00C5A76529DA73FE00907A91 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		00C5A76E29DA73FE00907A91 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00C5A76529DA73FE00907A91 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		00C5A73929D4707800907A91 /* hse_kr_ios.xcdatamodeld */ = {
