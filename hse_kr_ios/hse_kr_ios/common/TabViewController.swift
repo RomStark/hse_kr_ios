@@ -18,21 +18,25 @@ class TabViewController: UITabBarController {
     
     enum assemblyType {
         case charutyTable
+        case userInfo
     }
     
     func generateTabBar() {
         viewControllers = [
-            generateVC(viewcontroller: CharityTableViewController(), assembly: .charutyTable, title: "таблица", image: UIImage(systemName: "magnifyingglass")),
+            generateVC(viewcontroller: CharityTableViewController(), assembly: .charutyTable,  image: UIImage(systemName: "magnifyingglass")),
+            generateVC(viewcontroller: UserInfoViewController(), assembly: .userInfo, image: UIImage(systemName: "person.fill"))
             //                generateVC(viewcontroller: MapViewController(), title: "карта", image: UIImage(systemName: "map.circle")),
             //                generateVC(viewcontroller: UINavigationController(rootViewController: AccauntViewController()) , title: "профиль", image: UIImage(systemName: "person")),
         ]
     }
     
-    func generateVC(viewcontroller: UIViewController, assembly: assemblyType, title: String, image: UIImage?) -> UIViewController {
+    func generateVC(viewcontroller: UIViewController, assembly: assemblyType, image: UIImage?) -> UIViewController {
         let navVC = UINavigationController(rootViewController: viewcontroller)
         switch assembly {
         case .charutyTable:
             CharityTableAssembly(navigationController: navVC).assembly(viewController: viewcontroller)
+        case .userInfo:
+            UserInfoAssembly(navigationController: navVC).assembly(viewController: viewcontroller)
         }
         viewcontroller.tabBarItem.image = image
         return navVC

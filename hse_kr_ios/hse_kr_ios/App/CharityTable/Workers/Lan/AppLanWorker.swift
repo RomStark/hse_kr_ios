@@ -10,9 +10,7 @@ import FirebaseFirestore
 import FirebaseAuth
 
 protocol AppLanWorkable {
-    func signOut()
     func getCharitydata(completion: @escaping (Result<[Charity], Error>) -> Void)
-    func uploadImageData(url: String?, completion: @escaping (Data?) -> Void)
 }
 
 final class AppLanWorker {
@@ -20,19 +18,7 @@ final class AppLanWorker {
 }
 
 extension AppLanWorker: AppLanWorkable {
-    func uploadImageData(url: String?, completion: @escaping (Data?) -> Void) {
-        guard let urlString = url,
-              let url = URL(string: urlString) else {
-            return
-        }
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url) {
-                DispatchQueue.main.async {
-                    completion(data)
-                }
-            }
-        }
-    }
+    
     func getCharitydata(completion: @escaping (Result<[Charity], Error>) -> Void) {
         Firestore.firestore().collection("charities").getDocuments { query, error in
             if let error = error {
@@ -61,9 +47,9 @@ extension AppLanWorker: AppLanWorkable {
                     scienceResearch: data["science&research"] as? Bool ?? false,
                     qiwiURL: data["qiwiurl"] as? String
                 )
-//                self?.uploadImageData(url: charity.photoURL) { data in
-//                    charity.data = data
-//                }
+                //                self?.uploadImageData(url: charity.photoURL) { data in
+                //                    charity.data = data
+                //                }
                 charitiesList.append(charity)
             }
             completion(.success(charitiesList))
@@ -71,10 +57,8 @@ extension AppLanWorker: AppLanWorkable {
         
     }
     
-    func signOut() {
-        do {
-            try? Auth.auth().signOut()
-        }
-    }
-    
 }
+
+
+
+

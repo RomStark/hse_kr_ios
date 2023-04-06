@@ -9,7 +9,6 @@ import Foundation
 
 
 protocol CharityTablePresentation {
-    func signOut()
     func getCharityModels(completion: @escaping (Result<[Charity], Error>) -> Void)
 }
 
@@ -43,11 +42,6 @@ extension CharityTablePresenter: CharityTablePresentation {
             }
         }
     }
-    
-    func signOut() {
-        interactor.signOut()
-    }
-    
     
 }
 

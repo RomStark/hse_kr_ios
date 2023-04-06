@@ -48,6 +48,13 @@
 		00C5A79C29DDF7AF00907A91 /* CharityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A79B29DDF7AF00907A91 /* CharityTableViewCell.swift */; };
 		00C5A79F29DDF8E500907A91 /* CharityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A79E29DDF8E500907A91 /* CharityModel.swift */; };
 		00C5A7A229DEC7EC00907A91 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 00C5A7A129DEC7EC00907A91 /* Kingfisher */; };
+		00C5A7A529DECFA600907A91 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7A429DECFA600907A91 /* UserInfoViewController.swift */; };
+		00C5A7A729DECFBF00907A91 /* UserInfoAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7A629DECFBF00907A91 /* UserInfoAssembly.swift */; };
+		00C5A7A929DECFCA00907A91 /* UserInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7A829DECFCA00907A91 /* UserInfoPresenter.swift */; };
+		00C5A7AB29DECFDD00907A91 /* UserInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7AA29DECFDD00907A91 /* UserInfoInteractor.swift */; };
+		00C5A7AD29DECFE900907A91 /* UserInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7AC29DECFE900907A91 /* UserInfoRouter.swift */; };
+		00C5A7B129DED17600907A91 /* UserInfoLanWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7B029DED17600907A91 /* UserInfoLanWorker.swift */; };
+		00C5A7B329DF065800907A91 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7B229DF065800907A91 /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +95,13 @@
 		00C5A79829DD232000907A91 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		00C5A79B29DDF7AF00907A91 /* CharityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityTableViewCell.swift; sourceTree = "<group>"; };
 		00C5A79E29DDF8E500907A91 /* CharityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityModel.swift; sourceTree = "<group>"; };
+		00C5A7A429DECFA600907A91 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		00C5A7A629DECFBF00907A91 /* UserInfoAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoAssembly.swift; sourceTree = "<group>"; };
+		00C5A7A829DECFCA00907A91 /* UserInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPresenter.swift; sourceTree = "<group>"; };
+		00C5A7AA29DECFDD00907A91 /* UserInfoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoInteractor.swift; sourceTree = "<group>"; };
+		00C5A7AC29DECFE900907A91 /* UserInfoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRouter.swift; sourceTree = "<group>"; };
+		00C5A7B029DED17600907A91 /* UserInfoLanWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoLanWorker.swift; sourceTree = "<group>"; };
+		00C5A7B229DF065800907A91 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +219,7 @@
 		00C5A77029DAB66D00907A91 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				00C5A7A329DECF4100907A91 /* UserInfo */,
 				00C5A77129DAB68400907A91 /* CharityTable */,
 			);
 			path = App;
@@ -302,6 +317,44 @@
 			path = viewModels;
 			sourceTree = "<group>";
 		};
+		00C5A7A329DECF4100907A91 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A7B429DF066100907A91 /* ViewModels */,
+				00C5A7AE29DED15D00907A91 /* Workers */,
+				00C5A7A629DECFBF00907A91 /* UserInfoAssembly.swift */,
+				00C5A7A429DECFA600907A91 /* UserInfoViewController.swift */,
+				00C5A7A829DECFCA00907A91 /* UserInfoPresenter.swift */,
+				00C5A7AA29DECFDD00907A91 /* UserInfoInteractor.swift */,
+				00C5A7AC29DECFE900907A91 /* UserInfoRouter.swift */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		00C5A7AE29DED15D00907A91 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A7AF29DED16600907A91 /* Lan */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		00C5A7AF29DED16600907A91 /* Lan */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A7B029DED17600907A91 /* UserInfoLanWorker.swift */,
+			);
+			path = Lan;
+			sourceTree = "<group>";
+		};
+		00C5A7B429DF066100907A91 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A7B229DF065800907A91 /* UserViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -385,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C5A7A729DECFBF00907A91 /* UserInfoAssembly.swift in Sources */,
 				00C5A78429DAE86000907A91 /* RegistrationRouter.swift in Sources */,
 				00C5A77329DAB6AA00907A91 /* CharityTableViewController.swift in Sources */,
 				00C5A75829D66B1200907A91 /* AuthPresenter.swift in Sources */,
@@ -397,17 +451,23 @@
 				00C5A78629DAE94900907A91 /* RegistrationAssembly.swift in Sources */,
 				00C5A78029DAE69300907A91 /* RegistrationPresenter.swift in Sources */,
 				00C5A75A29D66B2100907A91 /* AuthInteractor.swift in Sources */,
+				00C5A7AB29DECFDD00907A91 /* UserInfoInteractor.swift in Sources */,
 				00C5A75429D668EE00907A91 /* Assemblying.swift in Sources */,
 				00C5A73529D4707800907A91 /* StartViewController.swift in Sources */,
 				00C5A78229DAE78100907A91 /* RegistrationInteractor.swift in Sources */,
+				00C5A7AD29DECFE900907A91 /* UserInfoRouter.swift in Sources */,
+				00C5A7A929DECFCA00907A91 /* UserInfoPresenter.swift in Sources */,
 				00C5A74929D5FB1B00907A91 /* StartPresenter.swift in Sources */,
+				00C5A7A529DECFA600907A91 /* UserInfoViewController.swift in Sources */,
 				00C5A77929DAB6F200907A91 /* CharityTableRouter.swift in Sources */,
+				00C5A7B329DF065800907A91 /* UserViewModel.swift in Sources */,
 				00C5A79129DB978700907A91 /* AuthLanWorker.swift in Sources */,
 				00C5A79F29DDF8E500907A91 /* CharityModel.swift in Sources */,
 				00C5A79929DD232100907A91 /* TabViewController.swift in Sources */,
 				00C5A77529DAB6C700907A91 /* CharityTablePresenter.swift in Sources */,
 				00C5A73B29D4707800907A91 /* hse_kr_ios.xcdatamodeld in Sources */,
 				00C5A79329DB9AC100907A91 /* Errors.swift in Sources */,
+				00C5A7B129DED17600907A91 /* UserInfoLanWorker.swift in Sources */,
 				00C5A77E29DAE66000907A91 /* RegistrationViewController.swift in Sources */,
 				00C5A77729DAB6E400907A91 /* CharityTableInteractor.swift in Sources */,
 				00C5A78929DAEFDA00907A91 /* Extensions.swift in Sources */,

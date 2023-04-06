@@ -9,8 +9,8 @@ import Foundation
 
 
 protocol CharityTableBusinessLogic {
-    func signOut()
     func getModels(completion: @escaping (Result<[Charity], Error>) -> Void)
+    
 }
 
 final class CharityTableInteractor {
@@ -22,27 +22,16 @@ final class CharityTableInteractor {
 //MARK: CharityTableBusinessLogic
 extension CharityTableInteractor: CharityTableBusinessLogic {
     func getModels(completion: @escaping (Result<[Charity], Error>) -> Void) {
-        lanWorker.getCharitydata { [weak self] result in
+        lanWorker.getCharitydata { result in
             switch result {
             case .failure(let error):
                 completion(.failure(error))
             case .success(let charities):
-//                var doneCharyties = [Charity]()
-//                for charity in charities {
-//                    self?.lanWorker.uploadImageData(url: charity.photoURL) { data in
-//                        var char = charity
-//                        char.data = data
-//                        doneCharyties.append(char)
-//                    }
-//                }
                 completion(.success(charities))
             }
         }
     }
     
-    func signOut() {
-        lanWorker.signOut()
-    }
     
     
 }
