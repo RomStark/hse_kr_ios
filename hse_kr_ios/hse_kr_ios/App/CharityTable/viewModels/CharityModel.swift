@@ -21,9 +21,8 @@ struct Charity: Codable {
     let poverty: Bool
     let scienceResearch: Bool
     let qiwiURL: String?
-    var data: Data?
     
-    init(creatorID: String, name: String, description: String, photoURL: String? = nil, latitude: Double? = nil, longitude: Double? = nil, art: Bool = false, children: Bool = false, education: Bool = false, healthcare: Bool = false, poverty: Bool = false, scienceResearch: Bool = false, qiwiURL: String? = nil, data: Data? = nil) {
+    init(creatorID: String, name: String, description: String, photoURL: String? = nil, latitude: Double? = nil, longitude: Double? = nil, art: Bool = false, children: Bool = false, education: Bool = false, healthcare: Bool = false, poverty: Bool = false, scienceResearch: Bool = false, qiwiURL: String? = nil) {
         self.creatorID = creatorID
         self.name = name
         self.description = description
@@ -37,6 +36,5 @@ struct Charity: Codable {
         self.poverty = poverty
         self.scienceResearch = scienceResearch
         self.qiwiURL = qiwiURL
-        self.data = data
     }
 }

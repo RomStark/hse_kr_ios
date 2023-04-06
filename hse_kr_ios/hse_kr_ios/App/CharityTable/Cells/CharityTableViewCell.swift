@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CharityTableViewCell: UITableViewCell {
     
@@ -99,29 +100,15 @@ class CharityTableViewCell: UITableViewCell {
     func configure(charity: Charity) {
         self.titleLabel.text = charity.name
         self.descriptionLabel.text = charity.description
-//        guard let data = charity.data else {return}
-//        image.image = UIImage(data: data)
-        
-        if (image.image == nil) {
-            print(charity.photoURL)
-            loadPhoto(urlString: charity.photoURL ?? "")
+        if let urlString = charity.photoURL,
+           let url = URL(string: urlString) {
+            image.kf.setImage(with: url)
+        } else {
+            image.image = nil
         }
+
     }
     
-    func loadPhoto(urlString: String) {
-        guard let url = URL(string: urlString) else {
-            self.image.image = UIImage(named: "imageCharity")
-            return
-        }
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self.image.image = image
-                    }
-                }
-            }
-        }
-    }
+    
 
 }
