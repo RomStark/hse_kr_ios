@@ -42,10 +42,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func showApp() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let vc = CharityTableViewController()
-        let navcontroller = UINavigationController(rootViewController: vc)
-        window?.rootViewController = navcontroller
-        CharityTableAssembly(navigationController: navcontroller).assembly(viewController: vc)
+//        let vc = CharityTableViewController()
+//        let navcontroller = UINavigationController(rootViewController: vc)
+        let tabBarVC = TabViewController()
+        window?.rootViewController = tabBarVC
+//        CharityTableAssembly(navigationController: navcontroller).assembly(viewController: vc)
         window?.makeKeyAndVisible()
     }
 }
