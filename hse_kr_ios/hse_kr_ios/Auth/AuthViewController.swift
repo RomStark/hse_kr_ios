@@ -68,12 +68,7 @@ class AuthViewController: UIViewController {
 //MARK: AuthViewable
 extension AuthViewController: AuthViewable {
     func showAlert(error: Errors) {
-        switch error {
-        case .wrongLoginPassword:
-            print("wrongLoginPassword")
-        default :
-            print("asas")
-        }
+        showErrorAlert(error: error)
     }
     
     
@@ -183,7 +178,7 @@ private extension AuthViewController {
         case .wrongLoginPassword:
             showAlert(title: "Ошибка", message: "Заполните все поля корректно")
         case .emailNotExist:
-            showAlert(title: "Ошибка", message: "Аккаунт с такой почтой уже существует")
+            showAlert(title: "Ошибка", message: "Аккаунт с такой почтой не существует")
         case .emailNotVerified:
             showAlert(title: "Ошибка", message: "Почта не подтверждена, мы уже отправили письмо на вашу почту")
             presenter?.confirmEmail()

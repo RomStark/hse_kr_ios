@@ -10,6 +10,7 @@ import Foundation
 
 protocol CharityTablePresentation {
     func signOut()
+    func getCharityModels(completion: @escaping (Result<[Charity], Error>) -> Void)
 }
 
 protocol CharityTablePresentationMenagement: AnyObject {
@@ -32,6 +33,17 @@ final class CharityTablePresenter {
 
 //MARK: CharityTablePresentation
 extension CharityTablePresenter: CharityTablePresentation {
+    func getCharityModels(completion: @escaping (Result<[Charity], Error>) -> Void) {
+        interactor.getModels { result in
+            switch result {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let charity):
+                completion(.success(charity))
+            }
+        }
+    }
+    
     func signOut() {
         interactor.signOut()
     }
