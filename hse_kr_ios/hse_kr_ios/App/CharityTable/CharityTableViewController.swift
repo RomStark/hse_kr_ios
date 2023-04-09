@@ -80,7 +80,7 @@ private extension CharityTableViewController {
     private func setupSegmentController() {
         view.addSubview(segmentController)
         segmentController.selectedSegmentIndex = 0
-        fetchCharities()
+        fetchCharities(isRecomendet: false)
         segmentController.addUnderlineForSelectedSegment()
         segmentController.translatesAutoresizingMaskIntoConstraints = false
         segmentController.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
@@ -91,12 +91,19 @@ private extension CharityTableViewController {
     @objc private func segmentControllerValueChanged(target: UISegmentedControl) {
         if target == self.segmentController {
             target.changeUnderlinePosition()
-            fetchCharities()
+            switch target.selectedSegmentIndex {
+            case 0:
+                fetchCharities(isRecomendet: false)
+            case 1:
+                fetchCharities(isRecomendet: true)
+            default:
+                print("")
+            }
         }
     }
     
-    private func fetchCharities() {
-        presenter?.getCharityModels(completion: { [weak self] result in
+    private func fetchCharities(isRecomendet: Bool) {
+        presenter?.getCharityModels(isRecomended: isRecomendet, completion: { [weak self] result in
             switch result {
             case .failure(let error):
                 print(error)
