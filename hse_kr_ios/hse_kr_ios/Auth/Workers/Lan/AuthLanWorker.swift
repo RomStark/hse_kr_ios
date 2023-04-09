@@ -16,7 +16,7 @@ protocol AuthLanWorkable {
 }
 
 final class AuthLanWorker {
-    
+    let userdefault = UserDefaults.standard
 }
 
 extension AuthLanWorker: AuthLanWorkable {
@@ -34,7 +34,7 @@ extension AuthLanWorker: AuthLanWorkable {
     }
     
     func signIn(email: String, password: String, completion: @escaping (Result<Bool, Errors>) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { _, error in
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
             if let error = error {
                 switch (error as NSError).code {
                 case AuthErrorCode.invalidEmail.rawValue:
@@ -47,6 +47,7 @@ extension AuthLanWorker: AuthLanWorkable {
                     completion(.failure(.unknownError))
                 }
             } else {
+                self?.userdefault.set(result?.user.uid, forKey: "uid")
                 completion(.success(true))
             }
             

@@ -27,14 +27,7 @@ final class CharityTableViewController: UIViewController {
         
         return segmentController
     }()
-    private var signOutButton: UIButton = {
-        var button = UIButton()
-        button.setTitle("выйти", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 16)
-        button.setTitleColor(UIColor(red: 0, green: 0, blue: 255, alpha: 1), for: .normal)
-        
-        return button
-    }()
+    
     
     private var tableView: UITableView = {
         let tableview = UITableView()
@@ -69,24 +62,13 @@ extension CharityTableViewController: CharityTableViewable {
 
 private extension CharityTableViewController {
     private func setupUI() {
-        setupSignOutButton()
         setupTitleLabel()
         setupSegmentController()
         setupTableView()
     }
     
-    private func setupSignOutButton() {
-        view.addSubview(signOutButton)
-        signOutButton.translatesAutoresizingMaskIntoConstraints = false
-        signOutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        signOutButton.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30).isActive = true
-        signOutButton.addTarget(self, action: #selector(signOutButtonTapped), for: .touchUpInside)
-        
-    }
     
-    @objc private func signOutButtonTapped() {
-        presenter?.signOut()
-    }
+    
     
     private func setupTitleLabel() {
         view.addSubview(titleLabel)
@@ -98,7 +80,7 @@ private extension CharityTableViewController {
     private func setupSegmentController() {
         view.addSubview(segmentController)
         segmentController.selectedSegmentIndex = 0
-        fetchCharities()
+        fetchCharities(isRecomendet: false)
         segmentController.addUnderlineForSelectedSegment()
         segmentController.translatesAutoresizingMaskIntoConstraints = false
         segmentController.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
@@ -109,12 +91,19 @@ private extension CharityTableViewController {
     @objc private func segmentControllerValueChanged(target: UISegmentedControl) {
         if target == self.segmentController {
             target.changeUnderlinePosition()
-            fetchCharities()
+            switch target.selectedSegmentIndex {
+            case 0:
+                fetchCharities(isRecomendet: false)
+            case 1:
+                fetchCharities(isRecomendet: true)
+            default:
+                print("")
+            }
         }
     }
     
-    private func fetchCharities() {
-        presenter?.getCharityModels(completion: { [weak self] result in
+    private func fetchCharities(isRecomendet: Bool) {
+        presenter?.getCharityModels(isRecomended: isRecomendet, completion: { [weak self] result in
             switch result {
             case .failure(let error):
                 print(error)
