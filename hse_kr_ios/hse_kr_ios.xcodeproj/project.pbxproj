@@ -58,6 +58,8 @@
 		00C5A7B729E2BC4C00907A91 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7B629E2BC4C00907A91 /* MapViewController.swift */; };
 		00C5A7B929E2BC5900907A91 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7B829E2BC5900907A91 /* MapPresenter.swift */; };
 		00C5A7BB29E2BC6400907A91 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7BA29E2BC6400907A91 /* MapInteractor.swift */; };
+		00C5A7BD29E2BD1800907A91 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7BC29E2BD1800907A91 /* MapRouter.swift */; };
+		00C5A7BF29E2BD5000907A91 /* MapAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7BE29E2BD5000907A91 /* MapAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +110,8 @@
 		00C5A7B629E2BC4C00907A91 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		00C5A7B829E2BC5900907A91 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		00C5A7BA29E2BC6400907A91 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		00C5A7BC29E2BD1800907A91 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
+		00C5A7BE29E2BD5000907A91 /* MapAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,6 +372,8 @@
 				00C5A7B629E2BC4C00907A91 /* MapViewController.swift */,
 				00C5A7B829E2BC5900907A91 /* MapPresenter.swift */,
 				00C5A7BA29E2BC6400907A91 /* MapInteractor.swift */,
+				00C5A7BC29E2BD1800907A91 /* MapRouter.swift */,
+				00C5A7BE29E2BD5000907A91 /* MapAssembly.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				00C5A7B729E2BC4C00907A91 /* MapViewController.swift in Sources */,
 				00C5A79129DB978700907A91 /* AuthLanWorker.swift in Sources */,
 				00C5A7B929E2BC5900907A91 /* MapPresenter.swift in Sources */,
+				00C5A7BF29E2BD5000907A91 /* MapAssembly.swift in Sources */,
 				00C5A79F29DDF8E500907A91 /* CharityModel.swift in Sources */,
 				00C5A79929DD232100907A91 /* TabViewController.swift in Sources */,
 				00C5A77529DAB6C700907A91 /* CharityTablePresenter.swift in Sources */,
@@ -492,6 +499,7 @@
 				00C5A77729DAB6E400907A91 /* CharityTableInteractor.swift in Sources */,
 				00C5A78929DAEFDA00907A91 /* Extensions.swift in Sources */,
 				00C5A75029D6687300907A91 /* AuthAssembly.swift in Sources */,
+				00C5A7BD29E2BD1800907A91 /* MapRouter.swift in Sources */,
 				00C5A75629D66B0200907A91 /* AuthViewController.swift in Sources */,
 				00C5A79729DBA4A200907A91 /* AppLanWorker.swift in Sources */,
 				00C5A79C29DDF7AF00907A91 /* CharityTableViewCell.swift in Sources */,
