@@ -58,6 +58,13 @@
 		00C5A7B729E2BC4C00907A91 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7B629E2BC4C00907A91 /* MapViewController.swift */; };
 		00C5A7B929E2BC5900907A91 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7B829E2BC5900907A91 /* MapPresenter.swift */; };
 		00C5A7BB29E2BC6400907A91 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7BA29E2BC6400907A91 /* MapInteractor.swift */; };
+		00C5A7BD29E2BD1800907A91 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7BC29E2BD1800907A91 /* MapRouter.swift */; };
+		00C5A7BF29E2BD5000907A91 /* MapAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7BE29E2BD5000907A91 /* MapAssembly.swift */; };
+		00C5A7C329E3DA7F00907A91 /* MapLanWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7C229E3DA7F00907A91 /* MapLanWorker.swift */; };
+		00C5A7C629E3DF0800907A91 /* locationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7C529E3DF0800907A91 /* locationsModel.swift */; };
+		00C5A7C929E3F76D00907A91 /* CharityClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7C829E3F76D00907A91 /* CharityClass.swift */; };
+		00C5A7CB29E42EAD00907A91 /* CharityStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7CA29E42EAD00907A91 /* CharityStorage.swift */; };
+		00C5A7CE29E433A000907A91 /* CharityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7CD29E433A000907A91 /* CharityInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +115,13 @@
 		00C5A7B629E2BC4C00907A91 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		00C5A7B829E2BC5900907A91 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		00C5A7BA29E2BC6400907A91 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		00C5A7BC29E2BD1800907A91 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
+		00C5A7BE29E2BD5000907A91 /* MapAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAssembly.swift; sourceTree = "<group>"; };
+		00C5A7C229E3DA7F00907A91 /* MapLanWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLanWorker.swift; sourceTree = "<group>"; };
+		00C5A7C529E3DF0800907A91 /* locationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationsModel.swift; sourceTree = "<group>"; };
+		00C5A7C829E3F76D00907A91 /* CharityClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityClass.swift; sourceTree = "<group>"; };
+		00C5A7CA29E42EAD00907A91 /* CharityStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityStorage.swift; sourceTree = "<group>"; };
+		00C5A7CD29E433A000907A91 /* CharityInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				00C5A79829DD232000907A91 /* TabViewController.swift */,
+				00C5A7CA29E42EAD00907A91 /* CharityStorage.swift */,
 				00C5A78829DAEFDA00907A91 /* Extensions.swift */,
 				00C5A75229D668D200907A91 /* Protocols */,
 				00C5A79229DB9AC100907A91 /* Errors.swift */,
@@ -225,6 +240,8 @@
 		00C5A77029DAB66D00907A91 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				00C5A7CC29E4338200907A91 /* CharityInfo */,
+				00C5A79D29DDF8CC00907A91 /* viewModels */,
 				00C5A7B529E2BC3200907A91 /* Map */,
 				00C5A7A329DECF4100907A91 /* UserInfo */,
 				00C5A77129DAB68400907A91 /* CharityTable */,
@@ -235,7 +252,6 @@
 		00C5A77129DAB68400907A91 /* CharityTable */ = {
 			isa = PBXGroup;
 			children = (
-				00C5A79D29DDF8CC00907A91 /* viewModels */,
 				00C5A79A29DDF79100907A91 /* Cells */,
 				00C5A79429DBA48800907A91 /* Workers */,
 				00C5A77229DAB6AA00907A91 /* CharityTableViewController.swift */,
@@ -365,11 +381,48 @@
 		00C5A7B529E2BC3200907A91 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				00C5A7C429E3DEF300907A91 /* viewModels */,
+				00C5A7C029E2BDEF00907A91 /* Workers */,
 				00C5A7B629E2BC4C00907A91 /* MapViewController.swift */,
 				00C5A7B829E2BC5900907A91 /* MapPresenter.swift */,
 				00C5A7BA29E2BC6400907A91 /* MapInteractor.swift */,
+				00C5A7BC29E2BD1800907A91 /* MapRouter.swift */,
+				00C5A7BE29E2BD5000907A91 /* MapAssembly.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		00C5A7C029E2BDEF00907A91 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A7C129E2BDF800907A91 /* Lan */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		00C5A7C129E2BDF800907A91 /* Lan */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A7C229E3DA7F00907A91 /* MapLanWorker.swift */,
+			);
+			path = Lan;
+			sourceTree = "<group>";
+		};
+		00C5A7C429E3DEF300907A91 /* viewModels */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A7C529E3DF0800907A91 /* locationsModel.swift */,
+				00C5A7C829E3F76D00907A91 /* CharityClass.swift */,
+			);
+			path = viewModels;
+			sourceTree = "<group>";
+		};
+		00C5A7CC29E4338200907A91 /* CharityInfo */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A7CD29E433A000907A91 /* CharityInfoViewController.swift */,
+			);
+			path = CharityInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,18 +522,23 @@
 				00C5A78029DAE69300907A91 /* RegistrationPresenter.swift in Sources */,
 				00C5A75A29D66B2100907A91 /* AuthInteractor.swift in Sources */,
 				00C5A7AB29DECFDD00907A91 /* UserInfoInteractor.swift in Sources */,
+				00C5A7C329E3DA7F00907A91 /* MapLanWorker.swift in Sources */,
 				00C5A75429D668EE00907A91 /* Assemblying.swift in Sources */,
 				00C5A73529D4707800907A91 /* StartViewController.swift in Sources */,
 				00C5A78229DAE78100907A91 /* RegistrationInteractor.swift in Sources */,
 				00C5A7AD29DECFE900907A91 /* UserInfoRouter.swift in Sources */,
 				00C5A7A929DECFCA00907A91 /* UserInfoPresenter.swift in Sources */,
+				00C5A7C629E3DF0800907A91 /* locationsModel.swift in Sources */,
+				00C5A7CE29E433A000907A91 /* CharityInfoViewController.swift in Sources */,
 				00C5A74929D5FB1B00907A91 /* StartPresenter.swift in Sources */,
 				00C5A7A529DECFA600907A91 /* UserInfoViewController.swift in Sources */,
 				00C5A77929DAB6F200907A91 /* CharityTableRouter.swift in Sources */,
+				00C5A7CB29E42EAD00907A91 /* CharityStorage.swift in Sources */,
 				00C5A7B329DF065800907A91 /* UserViewModel.swift in Sources */,
 				00C5A7B729E2BC4C00907A91 /* MapViewController.swift in Sources */,
 				00C5A79129DB978700907A91 /* AuthLanWorker.swift in Sources */,
 				00C5A7B929E2BC5900907A91 /* MapPresenter.swift in Sources */,
+				00C5A7BF29E2BD5000907A91 /* MapAssembly.swift in Sources */,
 				00C5A79F29DDF8E500907A91 /* CharityModel.swift in Sources */,
 				00C5A79929DD232100907A91 /* TabViewController.swift in Sources */,
 				00C5A77529DAB6C700907A91 /* CharityTablePresenter.swift in Sources */,
@@ -492,10 +550,12 @@
 				00C5A77729DAB6E400907A91 /* CharityTableInteractor.swift in Sources */,
 				00C5A78929DAEFDA00907A91 /* Extensions.swift in Sources */,
 				00C5A75029D6687300907A91 /* AuthAssembly.swift in Sources */,
+				00C5A7BD29E2BD1800907A91 /* MapRouter.swift in Sources */,
 				00C5A75629D66B0200907A91 /* AuthViewController.swift in Sources */,
 				00C5A79729DBA4A200907A91 /* AppLanWorker.swift in Sources */,
 				00C5A79C29DDF7AF00907A91 /* CharityTableViewCell.swift in Sources */,
 				00C5A75C29D66B2E00907A91 /* AuthRouter.swift in Sources */,
+				00C5A7C929E3F76D00907A91 /* CharityClass.swift in Sources */,
 				00C5A73129D4707800907A91 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

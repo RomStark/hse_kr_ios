@@ -20,6 +20,7 @@ final class AppLanWorker {
 extension AppLanWorker: AppLanWorkable {
     
     func getCharitydata(completion: @escaping (Result<[Charity], Error>) -> Void) {
+//        Firestore.firestore().collection("").referen
         Firestore.firestore().collection("charities").getDocuments { query, error in
             if let error = error {
                 completion(.failure(error))
@@ -29,10 +30,14 @@ extension AppLanWorker: AppLanWorkable {
                 completion(.success([]))
                 return
             }
+            
             for doc in docs {
+                
                 let data = doc.data()
-                //                charitiesList.append(JSONDecoder().decode(Charity.self, from: data))
+//                print(doc.documentID)
+                
                 let charity = Charity(
+                    id: doc.documentID,
                     creatorID: data["creatorid"] as? String ?? "creatorID",
                     name: data["name"] as? String ?? "name",
                     description: data["description"] as? String ?? "description",
@@ -47,9 +52,7 @@ extension AppLanWorker: AppLanWorkable {
                     scienceResearch: data["science&research"] as? Bool ?? false,
                     qiwiURL: data["qiwiurl"] as? String
                 )
-                //                self?.uploadImageData(url: charity.photoURL) { data in
-                //                    charity.data = data
-                //                }
+               
                 charitiesList.append(charity)
             }
             completion(.success(charitiesList))

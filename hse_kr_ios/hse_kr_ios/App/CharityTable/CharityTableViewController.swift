@@ -12,7 +12,7 @@ protocol CharityTableViewable: AnyObject {
 }
 
 final class CharityTableViewController: UIViewController {
-    
+    private let charityStorage = CharityStorage.shared
     private var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Лента"
@@ -107,8 +107,11 @@ private extension CharityTableViewController {
             switch result {
             case .failure(let error):
                 print(error)
-            case .success(let charity):
-                self?.charities = charity
+            case .success(let charities):
+                for charity in charities {
+                    self?.charityStorage.charities[charity.id] = charity
+                }
+                self?.charities = charities
             }
         })
     }

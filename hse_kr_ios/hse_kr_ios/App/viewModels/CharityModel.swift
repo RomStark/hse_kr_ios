@@ -8,6 +8,7 @@
 import Foundation
 
 struct Charity: Codable {
+    let id: String
     let creatorID: String
     let name: String
     let description: String
@@ -22,7 +23,8 @@ struct Charity: Codable {
     let scienceResearch: Bool
     let qiwiURL: String?
     
-    init(creatorID: String, name: String, description: String, photoURL: String? = nil, latitude: Double? = nil, longitude: Double? = nil, art: Bool = false, children: Bool = false, education: Bool = false, healthcare: Bool = false, poverty: Bool = false, scienceResearch: Bool = false, qiwiURL: String? = nil) {
+    init(id: String, creatorID: String, name: String, description: String, photoURL: String? = nil, latitude: Double? = nil, longitude: Double? = nil, art: Bool = false, children: Bool = false, education: Bool = false, healthcare: Bool = false, poverty: Bool = false, scienceResearch: Bool = false, qiwiURL: String? = nil) {
+        self.id = id
         self.creatorID = creatorID
         self.name = name
         self.description = description
