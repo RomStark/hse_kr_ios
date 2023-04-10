@@ -14,4 +14,8 @@ enum Errors: Error {
     case emailNotVerified
     case wrongPassword
     case wrongLoginPassword
+    case adressNotExist
+    case nameNotExist
+    case descriptionNotExist
+    case adressNotSpecified
 }

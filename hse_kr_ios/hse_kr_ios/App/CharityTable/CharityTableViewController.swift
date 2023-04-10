@@ -12,6 +12,7 @@ protocol CharityTableViewable: AnyObject {
 }
 
 final class CharityTableViewController: UIViewController {
+    
     private let charityStorage = CharityStorage.shared
     private var titleLabel: UILabel = {
         let label = UILabel()
@@ -21,6 +22,15 @@ final class CharityTableViewController: UIViewController {
         return label
     }()
     
+    private let addCharityButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .white
+//        button.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
+        button.setBackgroundImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
+        
+        button.sizeToFit()
+        return button
+    }()
     
     private var segmentController: UISegmentedControl = {
         let segmentController = UISegmentedControl(items: ["Все организации", "Рекомендации"])
@@ -65,10 +75,26 @@ private extension CharityTableViewController {
         setupTitleLabel()
         setupSegmentController()
         setupTableView()
+        setupAddButton()
     }
     
     
     
+    private func setupAddButton() {
+        view.addSubview(addCharityButton)
+        addCharityButton.translatesAutoresizingMaskIntoConstraints = false
+        addCharityButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30).isActive = true
+        addCharityButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
+        addCharityButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        addCharityButton.heightAnchor.constraint(equalTo: addCharityButton.widthAnchor).isActive = true
+        addCharityButton.layer.cornerRadius = 40
+        addCharityButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func addButtonTapped() {
+        presenter?.addCharityButtonTapped()
+        
+    }
     
     private func setupTitleLabel() {
         view.addSubview(titleLabel)

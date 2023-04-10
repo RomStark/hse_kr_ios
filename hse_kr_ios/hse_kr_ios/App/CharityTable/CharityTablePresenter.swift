@@ -10,6 +10,7 @@ import Foundation
 
 protocol CharityTablePresentation {
     func getCharityModels(isRecomended: Bool, completion: @escaping (Result<[Charity], Error>) -> Void)
+    func addCharityButtonTapped()
 }
 
 protocol CharityTablePresentationMenagement: AnyObject {
@@ -32,6 +33,9 @@ final class CharityTablePresenter {
 
 //MARK: CharityTablePresentation
 extension CharityTablePresenter: CharityTablePresentation {
+    func addCharityButtonTapped() {
+        router.route(to: .addCharity)
+    }
     func getCharityModels(isRecomended: Bool, completion: @escaping (Result<[Charity], Error>) -> Void) {
         interactor.getModels { [weak self] result in
             switch result {

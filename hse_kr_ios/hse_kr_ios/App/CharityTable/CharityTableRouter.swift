@@ -16,7 +16,7 @@ final class CharityTableRouter {
     private var navigationController: UINavigationController?
     
     enum Target {
-        case some
+        case addCharity
     }
     init(navigationController: UINavigationController) {
            self.navigationController = navigationController
@@ -26,7 +26,13 @@ final class CharityTableRouter {
 //MARK: CharityTableRoutable
 extension CharityTableRouter: CharityTableRoutable {
     func route(to: Target) {
-        
+        switch to {
+        case .addCharity:
+            guard let navigationController = navigationController else {return}
+            let addCharityVC = AddCharityViewController()
+            AddCharityAssembly(navigationController: navigationController).assembly(viewController: addCharityVC)
+            navigationController.pushViewController(addCharityVC, animated: true)
+        }
     }
     
   

@@ -147,6 +147,7 @@ extension MapViewController: MKMapViewDelegate {
                 sheet.prefersScrollingExpandsWhenScrolledToEdge = false
                 sheet.prefersGrabberVisible = true
                 sheet.largestUndimmedDetentIdentifier = .medium
+                sheet.preferredCornerRadius = 20
             }
             present(vc, animated: true)
         } 

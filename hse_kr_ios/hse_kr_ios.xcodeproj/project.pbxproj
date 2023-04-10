@@ -65,6 +65,12 @@
 		00C5A7C929E3F76D00907A91 /* CharityClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7C829E3F76D00907A91 /* CharityClass.swift */; };
 		00C5A7CB29E42EAD00907A91 /* CharityStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7CA29E42EAD00907A91 /* CharityStorage.swift */; };
 		00C5A7CE29E433A000907A91 /* CharityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7CD29E433A000907A91 /* CharityInfoViewController.swift */; };
+		00C5A7D329E449CD00907A91 /* AddCharityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7D229E449CD00907A91 /* AddCharityViewController.swift */; };
+		00C5A7D529E449E000907A91 /* AddCharityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7D429E449E000907A91 /* AddCharityPresenter.swift */; };
+		00C5A7D729E449F300907A91 /* AddCharityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7D629E449F300907A91 /* AddCharityInteractor.swift */; };
+		00C5A7D929E449FD00907A91 /* AddCharityRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7D829E449FD00907A91 /* AddCharityRouter.swift */; };
+		00C5A7DB29E44A0B00907A91 /* AddCharityAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7DA29E44A0B00907A91 /* AddCharityAssembly.swift */; };
+		00C5A7E129E460AB00907A91 /* AddCharityLanWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7E029E460AB00907A91 /* AddCharityLanWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +128,12 @@
 		00C5A7C829E3F76D00907A91 /* CharityClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityClass.swift; sourceTree = "<group>"; };
 		00C5A7CA29E42EAD00907A91 /* CharityStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityStorage.swift; sourceTree = "<group>"; };
 		00C5A7CD29E433A000907A91 /* CharityInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityInfoViewController.swift; sourceTree = "<group>"; };
+		00C5A7D229E449CD00907A91 /* AddCharityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharityViewController.swift; sourceTree = "<group>"; };
+		00C5A7D429E449E000907A91 /* AddCharityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharityPresenter.swift; sourceTree = "<group>"; };
+		00C5A7D629E449F300907A91 /* AddCharityInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharityInteractor.swift; sourceTree = "<group>"; };
+		00C5A7D829E449FD00907A91 /* AddCharityRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharityRouter.swift; sourceTree = "<group>"; };
+		00C5A7DA29E44A0B00907A91 /* AddCharityAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharityAssembly.swift; sourceTree = "<group>"; };
+		00C5A7E029E460AB00907A91 /* AddCharityLanWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharityLanWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +252,7 @@
 		00C5A77029DAB66D00907A91 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				00C5A7D129E449A500907A91 /* AddCharity */,
 				00C5A7CC29E4338200907A91 /* CharityInfo */,
 				00C5A79D29DDF8CC00907A91 /* viewModels */,
 				00C5A7B529E2BC3200907A91 /* Map */,
@@ -425,6 +438,27 @@
 			path = CharityInfo;
 			sourceTree = "<group>";
 		};
+		00C5A7D129E449A500907A91 /* AddCharity */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A7DF29E4609600907A91 /* AddCharityLanWorkers */,
+				00C5A7D229E449CD00907A91 /* AddCharityViewController.swift */,
+				00C5A7D429E449E000907A91 /* AddCharityPresenter.swift */,
+				00C5A7D629E449F300907A91 /* AddCharityInteractor.swift */,
+				00C5A7D829E449FD00907A91 /* AddCharityRouter.swift */,
+				00C5A7DA29E44A0B00907A91 /* AddCharityAssembly.swift */,
+			);
+			path = AddCharity;
+			sourceTree = "<group>";
+		};
+		00C5A7DF29E4609600907A91 /* AddCharityLanWorkers */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A7E029E460AB00907A91 /* AddCharityLanWorker.swift */,
+			);
+			path = AddCharityLanWorkers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -513,6 +547,7 @@
 				00C5A77329DAB6AA00907A91 /* CharityTableViewController.swift in Sources */,
 				00C5A75829D66B1200907A91 /* AuthPresenter.swift in Sources */,
 				00C5A77B29DAB70300907A91 /* CharityTableAssembly.swift in Sources */,
+				00C5A7D729E449F300907A91 /* AddCharityInteractor.swift in Sources */,
 				00C5A75E29D916C200907A91 /* StartAssembly.swift in Sources */,
 				00C5A74B29D5FB5C00907A91 /* StartRouter.swift in Sources */,
 				00C5A74D29D5FEF400907A91 /* StartInteractor.swift in Sources */,
@@ -526,11 +561,14 @@
 				00C5A75429D668EE00907A91 /* Assemblying.swift in Sources */,
 				00C5A73529D4707800907A91 /* StartViewController.swift in Sources */,
 				00C5A78229DAE78100907A91 /* RegistrationInteractor.swift in Sources */,
+				00C5A7D529E449E000907A91 /* AddCharityPresenter.swift in Sources */,
 				00C5A7AD29DECFE900907A91 /* UserInfoRouter.swift in Sources */,
 				00C5A7A929DECFCA00907A91 /* UserInfoPresenter.swift in Sources */,
+				00C5A7D929E449FD00907A91 /* AddCharityRouter.swift in Sources */,
 				00C5A7C629E3DF0800907A91 /* locationsModel.swift in Sources */,
 				00C5A7CE29E433A000907A91 /* CharityInfoViewController.swift in Sources */,
 				00C5A74929D5FB1B00907A91 /* StartPresenter.swift in Sources */,
+				00C5A7D329E449CD00907A91 /* AddCharityViewController.swift in Sources */,
 				00C5A7A529DECFA600907A91 /* UserInfoViewController.swift in Sources */,
 				00C5A77929DAB6F200907A91 /* CharityTableRouter.swift in Sources */,
 				00C5A7CB29E42EAD00907A91 /* CharityStorage.swift in Sources */,
@@ -544,6 +582,8 @@
 				00C5A77529DAB6C700907A91 /* CharityTablePresenter.swift in Sources */,
 				00C5A73B29D4707800907A91 /* hse_kr_ios.xcdatamodeld in Sources */,
 				00C5A79329DB9AC100907A91 /* Errors.swift in Sources */,
+				00C5A7DB29E44A0B00907A91 /* AddCharityAssembly.swift in Sources */,
+				00C5A7E129E460AB00907A91 /* AddCharityLanWorker.swift in Sources */,
 				00C5A7B129DED17600907A91 /* UserInfoLanWorker.swift in Sources */,
 				00C5A77E29DAE66000907A91 /* RegistrationViewController.swift in Sources */,
 				00C5A7BB29E2BC6400907A91 /* MapInteractor.swift in Sources */,
