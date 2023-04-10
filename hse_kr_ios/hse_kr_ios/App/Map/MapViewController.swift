@@ -139,8 +139,16 @@ extension MapViewController: MKMapViewDelegate {
         
         let charity = view.annotation as! CharityClass
         
-        if let id = charityStorage.charities[charity.id] {
-            
+        if let charityModel = charityStorage.charities[charity.id] {
+            let vc = CharityInfoViewController()
+            vc.configure(charity: charityModel)
+            if let sheet = vc.sheetPresentationController{
+                sheet.detents = [.medium(), .large()]
+                sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+                sheet.prefersGrabberVisible = true
+                sheet.largestUndimmedDetentIdentifier = .medium
+            }
+            present(vc, animated: true)
         } 
 //        guard let coordinate = locationManager.location?.coordinate else { return }
 //

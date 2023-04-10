@@ -144,10 +144,19 @@ extension CharityTableViewController: UITableViewDataSource {
     }
     
     
+    
 }
 
 //MARK: UITableViewDelegate
 extension CharityTableViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let charityVC = CharityInfoViewController()
+        charityVC.configure(charity: self.charities[indexPath.row])
+        navigationController?.pushViewController(charityVC, animated: true)
+        
+    }
     
 }
 
