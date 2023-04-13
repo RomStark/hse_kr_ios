@@ -34,6 +34,7 @@ final class CharityInfoViewController: UIViewController {
         return label
     }()
     
+    
     private var qiwiLinkLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -89,8 +90,10 @@ final class CharityInfoViewController: UIViewController {
     func configure(charity: Charity) {
         self.nameLabel.text = charity.name
         self.descriptionLabel.text = charity.description
+        self.qiwiLinkLabel.text = charity.qiwiURL
         if let urlString = charity.photoURL,
            let url = URL(string: urlString) {
+            print(urlString)
             photo.kf.setImage(with: url)
         } else {
             photo.image = nil

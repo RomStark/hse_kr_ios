@@ -12,7 +12,7 @@ import FirebaseFirestore
 
 
 protocol AddCharityLanWorkable {
-    func addCharity(name: String, description: String, qiwiLink: String, adress: [Double], completion: @escaping (Result<Bool, Errors>) -> Void)
+    func addCharity(name: String, description: String, qiwiLink: String, adress: [Double], imageData: Data, completion: @escaping (Result<Bool, Errors>) -> Void)
 }
 
 final class AddCharityLanWorker {
@@ -21,18 +21,14 @@ final class AddCharityLanWorker {
 
 //MARK: AddCharityLanWorkable
 extension AddCharityLanWorker: AddCharityLanWorkable {
-    func addCharity(name: String, description: String, qiwiLink: String, adress: [Double], completion: @escaping (Result<Bool, Errors>) -> Void) {
-        //        let ref = firestore.collection(myCollection).document()
-        //        // ref is a DocumentReference
-        //        let id = ref.documentID
-        //        // id contains the random ID
-        //        ref.setData(...)
+    func addCharity(name: String, description: String, qiwiLink: String, adress: [Double], imageData: Data, completion: @escaping (Result<Bool, Errors>) -> Void) {
+        
         guard let userID = Auth.auth().currentUser?.uid else {
             completion(.failure(.unknownError))
             return
         }
         var data = [String : Any]()
-        data = ["name": name, "description": description, "qiwiurl": qiwiLink, "creatorid": userID] as [String : Any]
+        data = ["name": name, "description": description, "qiwiurl": qiwiLink, "creatorid": userID, "photourl": imageData] as [String : Any]
         let ref =  Firestore.firestore().collection("charities").document()
         let id = ref.documentID
         print(id)

@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import GoogleSignIn
+import FirebaseAuth
+import Firebase
 
 
 protocol AuthViewable: AnyObject {
@@ -34,6 +37,14 @@ class AuthViewController: UIViewController {
         button.setTitle("Войти", for: .normal)
         button.backgroundColor = .red
         button.layer.cornerRadius = 5
+        return button
+    }()
+    
+    private var googleSignInButton: GIDSignInButton = {
+        var button = GIDSignInButton()
+//        button.setTitle("Войти", for: .normal)
+//        button.backgroundColor = .red
+//        button.layer.cornerRadius = 5
         return button
     }()
     
@@ -96,6 +107,7 @@ private extension AuthViewController {
         setupPasswordTextFiled()
         setupChangePasswordButton()
         setupSignInButton()
+        setupGoogleSignInButton()
         setupChangeToRegPasswordButton()
     }
     
@@ -126,10 +138,57 @@ private extension AuthViewController {
         signInButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
         signInButton.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
     }
-    
     @objc private func signInButtonTapped() {
         presenter?.signInButtonTapped(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
     }
+//    private func setupGoogle() {
+//        GIDSignIn.sharedInstance()?.presentingViewController = self
+//        GIDSignIn.sharedInstance()?.delegate = self
+//    }
+    private func setupGoogleSignInButton() {
+        view.addSubview(googleSignInButton)
+        
+        googleSignInButton.translatesAutoresizingMaskIntoConstraints = false
+        googleSignInButton.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 60).isActive = true
+        googleSignInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        googleSignInButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        googleSignInButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
+        googleSignInButton.addTarget(self, action: #selector(googleSignInButtonTapped), for: .touchUpInside)
+    }
+    @objc private func googleSignInButtonTapped() {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+        
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+        
+        // Start the sign in flow!
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
+            guard error == nil else {
+                showAlert(title: "Ошибка", message: "Невозможно авторизоваться")
+                return
+            }
+            
+            guard let user = result?.user,
+                  let idToken = user.idToken?.tokenString
+            else {
+                showAlert(title: "Ошибка", message: "Невозможно авторизоваться")
+                return
+            }
+            
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                           accessToken: user.accessToken.tokenString)
+            
+            Auth.auth().signIn(with: credential) { result, error in
+                
+                // At this point, our user is signed in
+            }
+            
+        }
+        
+    }
+        
+    
     
     private func setupChangePasswordButton() {
         view.addSubview(changePasswordButton)
@@ -197,3 +256,6 @@ private extension AuthViewController {
         present(alert, animated: true)
     }
 }
+
+
+

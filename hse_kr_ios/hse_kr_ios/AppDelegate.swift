@@ -9,6 +9,8 @@ import UIKit
 import CoreData
 import FirebaseCore
 import FirebaseAuth
+import GoogleSignIn
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
 
         FirebaseApp.configure()
+//        GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         Auth.auth().addStateDidChangeListener { [weak self] auth, user in
             if user == nil  {
                 self?.showAuth()
@@ -48,5 +51,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = tabBarVC
 //        CharityTableAssembly(navigationController: navcontroller).assembly(viewController: vc)
         window?.makeKeyAndVisible()
+    }
+    
+    func application(_ app: UIApplication,
+                     open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+      return GIDSignIn.sharedInstance.handle(url)
     }
 }

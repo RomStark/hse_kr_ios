@@ -10,7 +10,7 @@ import CoreLocation
 
 protocol AddCharityBusinessLogic {
     func confirmAdress(adress: String, completion: @escaping (Result<[Double], Errors>) -> Void)
-    func addCharity(name: String, description: String, qiwiLink: String, adress: [Double], completion: @escaping (Result<Bool, Errors>) -> Void)
+    func addCharity(name: String, description: String, qiwiLink: String, adress: [Double], imageData: Data, completion: @escaping (Result<Bool, Errors>) -> Void)
 }
 
 final class AddCharityInteractor {
@@ -43,9 +43,9 @@ extension AddCharityInteractor: AddCharityBusinessLogic {
             }
         }
     }
-    func addCharity(name: String, description: String, qiwiLink: String, adress: [Double], completion: @escaping (Result<Bool, Errors>) -> Void) {
+    func addCharity(name: String, description: String, qiwiLink: String, adress: [Double], imageData: Data, completion: @escaping (Result<Bool, Errors>) -> Void) {
 
-        lanWorker.addCharity(name: name, description: description, qiwiLink: qiwiLink, adress: adress) { result in
+        lanWorker.addCharity(name: name, description: description, qiwiLink: qiwiLink, adress: adress, imageData: imageData) { result in
             switch result {
             case .success(let success):
                 completion(.success(success))

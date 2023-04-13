@@ -115,6 +115,9 @@ private extension MapViewController {
 }
 
 extension MapViewController: MKMapViewDelegate {
+    
+    
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is CharityClass else { return nil}
         var viewMarker: MKMarkerAnnotationView
@@ -133,10 +136,7 @@ extension MapViewController: MKMapViewDelegate {
         return viewMarker
     }
     
-    
-
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let charity = view.annotation as! CharityClass
         
         if let charityModel = charityStorage.charities[charity.id] {
@@ -150,31 +150,35 @@ extension MapViewController: MKMapViewDelegate {
                 sheet.preferredCornerRadius = 20
             }
             present(vc, animated: true)
-        } 
-//        guard let coordinate = locationManager.location?.coordinate else { return }
-//
-//        map.removeOverlays(map.overlays)
-//
-//        let charity = view.annotation as! CharityClass
-//        let startPoint = MKPlacemark(coordinate: coordinate)
-//        let endPoint = MKPlacemark(coordinate: charity.coordinate)
-//        let request = MKDirections.Request()
-//        request.source = MKMapItem(placemark: startPoint)
-//        request.destination = MKMapItem(placemark: endPoint)
-//        request.transportType = .automobile
-//
-//        let direction = MKDirections(request: request)
-//
-//        direction.calculate { [weak self] response, error in
-//
-//            guard let self else { return }
-//
-//            guard let response = response else { return }
-//
-//            for route in response.routes {
-//                self.map.addOverlay(route.polyline)
-//            }
-//        }
+        }
+    }
+
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+
+        guard let coordinate = locationManager.location?.coordinate else { return }
+
+        map.removeOverlays(map.overlays)
+
+        let charity = view.annotation as! CharityClass
+        let startPoint = MKPlacemark(coordinate: coordinate)
+        let endPoint = MKPlacemark(coordinate: charity.coordinate)
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: startPoint)
+        request.destination = MKMapItem(placemark: endPoint)
+        request.transportType = .automobile
+
+        let direction = MKDirections(request: request)
+
+        direction.calculate { [weak self] response, error in
+
+            guard let self else { return }
+
+            guard let response = response else { return }
+
+            for route in response.routes {
+                self.map.addOverlay(route.polyline)
+            }
+        }
 
     }
     

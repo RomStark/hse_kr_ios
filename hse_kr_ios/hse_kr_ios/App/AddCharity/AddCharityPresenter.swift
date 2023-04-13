@@ -9,7 +9,7 @@ import Foundation
 
 protocol AddCharityPresentation {
     func confirmAdress(adress: String, completion: @escaping (Result<[Double], Errors>) -> Void) 
-    func addCharity(name: String, description: String, qiwiLink: String, adress: [Double], completion: @escaping (Result<Bool, Errors>) -> Void)
+    func addCharity(name: String, description: String, qiwiLink: String, adress: [Double], imageData: Data, completion: @escaping (Result<Bool, Errors>) -> Void)
 }
 
 protocol AddCharityPresentationManagement: AnyObject {
@@ -40,8 +40,8 @@ extension AddCharityPresenter: AddCharityPresentation{
             }
         }
     }
-    func addCharity(name: String, description: String, qiwiLink: String, adress: [Double], completion: @escaping (Result<Bool, Errors>) -> Void) {
-        interactor.addCharity(name: name, description: description, qiwiLink: qiwiLink, adress: adress) { result in
+    func addCharity(name: String, description: String, qiwiLink: String, adress: [Double], imageData: Data, completion: @escaping (Result<Bool, Errors>) -> Void) {
+        interactor.addCharity(name: name, description: description, qiwiLink: qiwiLink, adress: adress, imageData: imageData) { result in
             switch result {
             case .success(let success):
                 completion(.success(success))

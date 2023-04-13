@@ -71,6 +71,8 @@
 		00C5A7D929E449FD00907A91 /* AddCharityRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7D829E449FD00907A91 /* AddCharityRouter.swift */; };
 		00C5A7DB29E44A0B00907A91 /* AddCharityAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7DA29E44A0B00907A91 /* AddCharityAssembly.swift */; };
 		00C5A7E129E460AB00907A91 /* AddCharityLanWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7E029E460AB00907A91 /* AddCharityLanWorker.swift */; };
+		00C5A7E429E807A700907A91 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 00C5A7E329E807A700907A91 /* GoogleSignIn */; };
+		00C5A7E629E807A700907A91 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 00C5A7E529E807A700907A91 /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,9 +146,11 @@
 				00C5A7A229DEC7EC00907A91 /* Kingfisher in Frameworks */,
 				00C5A76B29DA73FE00907A91 /* FirebaseDatabase in Frameworks */,
 				00C5A76D29DA73FE00907A91 /* FirebaseFirestore in Frameworks */,
+				00C5A7E629E807A700907A91 /* GoogleSignInSwift in Frameworks */,
 				00C5A76729DA73FE00907A91 /* FirebaseAnalytics in Frameworks */,
 				00C5A76F29DA73FE00907A91 /* FirebaseStorage in Frameworks */,
 				00C5A76929DA73FE00907A91 /* FirebaseAuth in Frameworks */,
+				00C5A7E429E807A700907A91 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,9 +256,9 @@
 		00C5A77029DAB66D00907A91 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				00C5A79D29DDF8CC00907A91 /* viewModels */,
 				00C5A7D129E449A500907A91 /* AddCharity */,
 				00C5A7CC29E4338200907A91 /* CharityInfo */,
-				00C5A79D29DDF8CC00907A91 /* viewModels */,
 				00C5A7B529E2BC3200907A91 /* Map */,
 				00C5A7A329DECF4100907A91 /* UserInfo */,
 				00C5A77129DAB68400907A91 /* CharityTable */,
@@ -482,6 +486,8 @@
 				00C5A76C29DA73FE00907A91 /* FirebaseFirestore */,
 				00C5A76E29DA73FE00907A91 /* FirebaseStorage */,
 				00C5A7A129DEC7EC00907A91 /* Kingfisher */,
+				00C5A7E329E807A700907A91 /* GoogleSignIn */,
+				00C5A7E529E807A700907A91 /* GoogleSignInSwift */,
 			);
 			productName = hse_kr_ios;
 			productReference = 00C5A72D29D4707800907A91 /* hse_kr_ios.app */;
@@ -514,6 +520,7 @@
 			packageReferences = (
 				00C5A76529DA73FE00907A91 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				00C5A7A029DEC7EC00907A91 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				00C5A7E229E807A700907A91 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = 00C5A72E29D4707800907A91 /* Products */;
 			projectDirPath = "";
@@ -738,6 +745,7 @@
 				DEVELOPMENT_TEAM = X58ZVA4AH8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hse_kr_ios/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow to see current location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -765,6 +773,7 @@
 				DEVELOPMENT_TEAM = X58ZVA4AH8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hse_kr_ios/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow to see current location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -822,6 +831,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		00C5A7E229E807A700907A91 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -854,6 +871,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 00C5A7A029DEC7EC00907A91 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		00C5A7E329E807A700907A91 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00C5A7E229E807A700907A91 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		00C5A7E529E807A700907A91 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00C5A7E229E807A700907A91 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 
