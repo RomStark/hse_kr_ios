@@ -23,12 +23,13 @@ class TabViewController: UITabBarController {
     }
     
     func generateTabBar() {
+        let vc = DonationListViewController()
+        vc.tabBarItem.image = UIImage(systemName: "list.bullet")
         viewControllers = [
             generateVC(viewcontroller: CharityTableViewController(), assembly: .charutyTable,  image: UIImage(systemName: "magnifyingglass")),
+            generateVC(viewcontroller: MapViewController(), assembly: .map, image:  UIImage(systemName: "map.fill")),
+            vc,
             generateVC(viewcontroller: UserInfoViewController(), assembly: .userInfo, image: UIImage(systemName: "person.fill")),
-            generateVC(viewcontroller: MapViewController(), assembly: .map, image:  UIImage(systemName: "map.fill"))
-            //                generateVC(viewcontroller: MapViewController(), title: "карта", image: UIImage(systemName: "map.circle")),
-            //                generateVC(viewcontroller: UINavigationController(rootViewController: AccauntViewController()) , title: "профиль", image: UIImage(systemName: "person")),
         ]
     }
     

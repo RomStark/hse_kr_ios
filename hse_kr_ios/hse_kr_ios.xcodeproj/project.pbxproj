@@ -73,6 +73,7 @@
 		00C5A7E129E460AB00907A91 /* AddCharityLanWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7E029E460AB00907A91 /* AddCharityLanWorker.swift */; };
 		00C5A7E429E807A700907A91 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 00C5A7E329E807A700907A91 /* GoogleSignIn */; };
 		00C5A7E629E807A700907A91 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 00C5A7E529E807A700907A91 /* GoogleSignInSwift */; };
+		00C5A7E929E8328400907A91 /* DonationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7E829E8328400907A91 /* DonationListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +137,7 @@
 		00C5A7D829E449FD00907A91 /* AddCharityRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharityRouter.swift; sourceTree = "<group>"; };
 		00C5A7DA29E44A0B00907A91 /* AddCharityAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharityAssembly.swift; sourceTree = "<group>"; };
 		00C5A7E029E460AB00907A91 /* AddCharityLanWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharityLanWorker.swift; sourceTree = "<group>"; };
+		00C5A7E829E8328400907A91 /* DonationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 		00C5A77029DAB66D00907A91 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				00C5A7E729E8325E00907A91 /* DonationList */,
 				00C5A79D29DDF8CC00907A91 /* viewModels */,
 				00C5A7D129E449A500907A91 /* AddCharity */,
 				00C5A7CC29E4338200907A91 /* CharityInfo */,
@@ -463,6 +466,14 @@
 			path = AddCharityLanWorkers;
 			sourceTree = "<group>";
 		};
+		00C5A7E729E8325E00907A91 /* DonationList */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A7E829E8328400907A91 /* DonationListViewController.swift */,
+			);
+			path = DonationList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -553,6 +564,7 @@
 				00C5A78429DAE86000907A91 /* RegistrationRouter.swift in Sources */,
 				00C5A77329DAB6AA00907A91 /* CharityTableViewController.swift in Sources */,
 				00C5A75829D66B1200907A91 /* AuthPresenter.swift in Sources */,
+				00C5A7E929E8328400907A91 /* DonationListViewController.swift in Sources */,
 				00C5A77B29DAB70300907A91 /* CharityTableAssembly.swift in Sources */,
 				00C5A7D729E449F300907A91 /* AddCharityInteractor.swift in Sources */,
 				00C5A75E29D916C200907A91 /* StartAssembly.swift in Sources */,
