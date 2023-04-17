@@ -35,10 +35,11 @@ final class CharityInfoViewController: UIViewController {
     }()
     
     
-    private var qiwiLinkLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    private var qiwiLinkButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(.blue, for: .normal)
+        return button
     }()
     
     override func viewDidLoad() {
@@ -53,7 +54,7 @@ final class CharityInfoViewController: UIViewController {
         setupPhoto()
         setupNameLabel()
         setupDescriptionLabel()
-        setupQiwiLinkLabel()
+        setupQiwiLinkButton()
     }
     
     
@@ -80,17 +81,24 @@ final class CharityInfoViewController: UIViewController {
         descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
     }
     
-    private func setupQiwiLinkLabel() {
-        view.addSubview(qiwiLinkLabel)
-        qiwiLinkLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 10).isActive = true
-        qiwiLinkLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
-        qiwiLinkLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
+    private func setupQiwiLinkButton() {
+        view.addSubview(qiwiLinkButton)
+        qiwiLinkButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 10).isActive = true
+        qiwiLinkButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        qiwiLinkButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
+        qiwiLinkButton.addTarget(self, action: #selector(qiwiLinkButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func qiwiLinkButtonTapped() {
+        let webVC = QiwiWebViewController()
+        webVC.configure(link: qiwiLinkButton.titleLabel?.text ?? "")
+        navigationController?.present(webVC, animated: true)
     }
     
     func configure(charity: Charity) {
         self.nameLabel.text = charity.name
         self.descriptionLabel.text = charity.description
-        self.qiwiLinkLabel.text = charity.qiwiURL
+        self.qiwiLinkButton.setTitle(charity.qiwiURL, for: .normal)
         if let urlString = charity.photoURL,
            let url = URL(string: urlString) {
             print(urlString)

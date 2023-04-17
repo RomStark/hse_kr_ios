@@ -74,6 +74,7 @@
 		00C5A7E429E807A700907A91 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 00C5A7E329E807A700907A91 /* GoogleSignIn */; };
 		00C5A7E629E807A700907A91 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 00C5A7E529E807A700907A91 /* GoogleSignInSwift */; };
 		00C5A7E929E8328400907A91 /* DonationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7E829E8328400907A91 /* DonationListViewController.swift */; };
+		00C5A7EB29EB2C6D00907A91 /* QiwiWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7EA29EB2C6D00907A91 /* QiwiWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +139,7 @@
 		00C5A7DA29E44A0B00907A91 /* AddCharityAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharityAssembly.swift; sourceTree = "<group>"; };
 		00C5A7E029E460AB00907A91 /* AddCharityLanWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharityLanWorker.swift; sourceTree = "<group>"; };
 		00C5A7E829E8328400907A91 /* DonationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationListViewController.swift; sourceTree = "<group>"; };
+		00C5A7EA29EB2C6D00907A91 /* QiwiWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiwiWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -441,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				00C5A7CD29E433A000907A91 /* CharityInfoViewController.swift */,
+				00C5A7EA29EB2C6D00907A91 /* QiwiWebViewController.swift */,
 			);
 			path = CharityInfo;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				00C5A77B29DAB70300907A91 /* CharityTableAssembly.swift in Sources */,
 				00C5A7D729E449F300907A91 /* AddCharityInteractor.swift in Sources */,
 				00C5A75E29D916C200907A91 /* StartAssembly.swift in Sources */,
+				00C5A7EB29EB2C6D00907A91 /* QiwiWebViewController.swift in Sources */,
 				00C5A74B29D5FB5C00907A91 /* StartRouter.swift in Sources */,
 				00C5A74D29D5FEF400907A91 /* StartInteractor.swift in Sources */,
 				00C5A76229DA6F2300907A91 /* StartCheckIDLanWorker.swift in Sources */,
