@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseStorage
 
 
 
@@ -27,16 +28,47 @@ extension AddCharityLanWorker: AddCharityLanWorkable {
             completion(.failure(.unknownError))
             return
         }
-        var data = [String : Any]()
-        data = ["name": name, "description": description, "qiwiurl": qiwiLink, "creatorid": userID, "photourl": imageData] as [String : Any]
+        
         let ref =  Firestore.firestore().collection("charities").document()
         let id = ref.documentID
         print(id)
-        ref.setData(data)
-        if !adress.isEmpty {
-            data = ["l": adress]
-            let ref =  Firestore.firestore().collection("charitylocations").document(id).setData(data)
+        upload(photo: imageData, charityID: id) { result in
+            switch result {
+            case .success(let url):
+                var data = [String : Any]()
+                data = ["name": name, "description": description, "qiwiurl": qiwiLink, "creatorid": userID, "photourl": url.absoluteString] as [String : Any]
+                ref.setData(data)
+                if !adress.isEmpty {
+                    data = ["l": adress]
+                    let ref =  Firestore.firestore().collection("charitylocations").document(id).setData(data)
+                }
+                completion(.success(true))
+            case .failure(let error):
+                completion(.failure(Errors.unknownError))
+            }
         }
-        completion(.success(true))
+        
+    }
+}
+
+private extension AddCharityLanWorker {
+    private func upload(photo: Data, charityID: String, completion: @escaping (Result<URL, Error>) -> Void) {
+        let ref = Storage.storage().reference().child("charities\(charityID)")
+        ref.putData(photo) { metadata, error in
+            if let error = error {
+                completion(.failure(error))
+            }
+            guard let metadata = metadata else {
+                completion(.failure(error!))
+                return
+            }
+            ref.downloadURL { url, error in
+                guard let url = url else {
+                    completion(.failure(error!))
+                    return
+                }
+                completion(.success(url))
+            }
+        }
     }
 }

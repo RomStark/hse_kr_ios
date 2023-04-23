@@ -168,6 +168,7 @@ private extension AddCharityViewController {
             errorsAlert(error: .descriptionNotExist)
             return
         }
+       
         guard let imageData = imageView.image?.jpegData(compressionQuality: 0.4) else {return}
         presenter?.addCharity(name: name,
                               description: description,

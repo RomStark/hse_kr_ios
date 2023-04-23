@@ -191,17 +191,17 @@ extension MapViewController: MKMapViewDelegate {
 }
 
 extension MapViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let coordinate: CLLocationCoordinate2D = manager.location?.coordinate else {
-            return
-        }
-        selfCoordinate.latitude = coordinate.latitude
-        selfCoordinate.longitude = coordinate.longitude
-        
-        let viewRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 200, longitudinalMeters: 200)
-        map.setRegion(viewRegion, animated: false)
-        
-    }
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        guard let coordinate: CLLocationCoordinate2D = manager.location?.coordinate else {
+//            return
+//        }
+//        selfCoordinate.latitude = coordinate.latitude
+//        selfCoordinate.longitude = coordinate.longitude
+//        
+//        let viewRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 200, longitudinalMeters: 200)
+//        map.setRegion(viewRegion, animated: false)
+//        
+//    }
 }
 
 //MARK: MapViewable

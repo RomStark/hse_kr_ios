@@ -14,6 +14,11 @@ protocol CharityTableViewable: AnyObject {
 final class CharityTableViewController: UIViewController {
     
     private let charityStorage = CharityStorage.shared
+    private let myRefreshontrol: UIRefreshControl = {
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(refreshData(sender:)), for: .valueChanged)
+        return refresh
+    }()
     private var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Лента"
@@ -127,7 +132,10 @@ private extension CharityTableViewController {
             }
         }
     }
-    
+    @objc private func refreshData(sender: UIRefreshControl) {
+        fetchCharities(isRecomendet: false)
+        sender.endRefreshing()
+    }
     private func fetchCharities(isRecomendet: Bool) {
         presenter?.getCharityModels(isRecomended: isRecomendet, completion: { [weak self] result in
             switch result {
@@ -144,6 +152,7 @@ private extension CharityTableViewController {
     
     private func setupTableView() {
         view.addSubview(tableView)
+        tableView.refreshControl = myRefreshontrol
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: segmentController.bottomAnchor, constant: 30).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true

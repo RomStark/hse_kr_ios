@@ -23,7 +23,6 @@
 		00C5A75C29D66B2E00907A91 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A75B29D66B2E00907A91 /* AuthRouter.swift */; };
 		00C5A75E29D916C200907A91 /* StartAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A75D29D916C200907A91 /* StartAssembly.swift */; };
 		00C5A76229DA6F2300907A91 /* StartCheckIDLanWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A76129DA6F2300907A91 /* StartCheckIDLanWorker.swift */; };
-		00C5A76429DA70FF00907A91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00C5A76329DA70FF00907A91 /* GoogleService-Info.plist */; };
 		00C5A76729DA73FE00907A91 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 00C5A76629DA73FE00907A91 /* FirebaseAnalytics */; };
 		00C5A76929DA73FE00907A91 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 00C5A76829DA73FE00907A91 /* FirebaseAuth */; };
 		00C5A76B29DA73FE00907A91 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 00C5A76A29DA73FE00907A91 /* FirebaseDatabase */; };
@@ -73,6 +72,9 @@
 		00C5A7E129E460AB00907A91 /* AddCharityLanWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7E029E460AB00907A91 /* AddCharityLanWorker.swift */; };
 		00C5A7E429E807A700907A91 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 00C5A7E329E807A700907A91 /* GoogleSignIn */; };
 		00C5A7E629E807A700907A91 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 00C5A7E529E807A700907A91 /* GoogleSignInSwift */; };
+		00C5A7E929E8328400907A91 /* DonationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7E829E8328400907A91 /* DonationListViewController.swift */; };
+		00C5A7EB29EB2C6D00907A91 /* QiwiWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5A7EA29EB2C6D00907A91 /* QiwiWebViewController.swift */; };
+		00C5A7ED29F5D4B700907A91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00C5A7EC29F5D4B700907A91 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,7 +96,6 @@
 		00C5A75B29D66B2E00907A91 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		00C5A75D29D916C200907A91 /* StartAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAssembly.swift; sourceTree = "<group>"; };
 		00C5A76129DA6F2300907A91 /* StartCheckIDLanWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCheckIDLanWorker.swift; sourceTree = "<group>"; };
-		00C5A76329DA70FF00907A91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		00C5A77229DAB6AA00907A91 /* CharityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityTableViewController.swift; sourceTree = "<group>"; };
 		00C5A77429DAB6C700907A91 /* CharityTablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityTablePresenter.swift; sourceTree = "<group>"; };
 		00C5A77629DAB6E400907A91 /* CharityTableInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityTableInteractor.swift; sourceTree = "<group>"; };
@@ -136,6 +137,9 @@
 		00C5A7D829E449FD00907A91 /* AddCharityRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharityRouter.swift; sourceTree = "<group>"; };
 		00C5A7DA29E44A0B00907A91 /* AddCharityAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharityAssembly.swift; sourceTree = "<group>"; };
 		00C5A7E029E460AB00907A91 /* AddCharityLanWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharityLanWorker.swift; sourceTree = "<group>"; };
+		00C5A7E829E8328400907A91 /* DonationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationListViewController.swift; sourceTree = "<group>"; };
+		00C5A7EA29EB2C6D00907A91 /* QiwiWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiwiWebViewController.swift; sourceTree = "<group>"; };
+		00C5A7EC29F5D4B700907A91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +186,7 @@
 				00C5A74E29D6685B00907A91 /* Auth */,
 				00C5A77029DAB66D00907A91 /* App */,
 				00C5A73029D4707800907A91 /* AppDelegate.swift */,
-				00C5A76329DA70FF00907A91 /* GoogleService-Info.plist */,
+				00C5A7EC29F5D4B700907A91 /* GoogleService-Info.plist */,
 				00C5A73C29D4707A00907A91 /* Assets.xcassets */,
 				00C5A73E29D4707A00907A91 /* LaunchScreen.storyboard */,
 				00C5A74129D4707A00907A91 /* Info.plist */,
@@ -256,6 +260,7 @@
 		00C5A77029DAB66D00907A91 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				00C5A7E729E8325E00907A91 /* DonationList */,
 				00C5A79D29DDF8CC00907A91 /* viewModels */,
 				00C5A7D129E449A500907A91 /* AddCharity */,
 				00C5A7CC29E4338200907A91 /* CharityInfo */,
@@ -438,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				00C5A7CD29E433A000907A91 /* CharityInfoViewController.swift */,
+				00C5A7EA29EB2C6D00907A91 /* QiwiWebViewController.swift */,
 			);
 			path = CharityInfo;
 			sourceTree = "<group>";
@@ -461,6 +467,14 @@
 				00C5A7E029E460AB00907A91 /* AddCharityLanWorker.swift */,
 			);
 			path = AddCharityLanWorkers;
+			sourceTree = "<group>";
+		};
+		00C5A7E729E8325E00907A91 /* DonationList */ = {
+			isa = PBXGroup;
+			children = (
+				00C5A7E829E8328400907A91 /* DonationListViewController.swift */,
+			);
+			path = DonationList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -537,8 +551,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				00C5A74029D4707A00907A91 /* LaunchScreen.storyboard in Resources */,
+				00C5A7ED29F5D4B700907A91 /* GoogleService-Info.plist in Resources */,
 				00C5A73D29D4707A00907A91 /* Assets.xcassets in Resources */,
-				00C5A76429DA70FF00907A91 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,9 +567,11 @@
 				00C5A78429DAE86000907A91 /* RegistrationRouter.swift in Sources */,
 				00C5A77329DAB6AA00907A91 /* CharityTableViewController.swift in Sources */,
 				00C5A75829D66B1200907A91 /* AuthPresenter.swift in Sources */,
+				00C5A7E929E8328400907A91 /* DonationListViewController.swift in Sources */,
 				00C5A77B29DAB70300907A91 /* CharityTableAssembly.swift in Sources */,
 				00C5A7D729E449F300907A91 /* AddCharityInteractor.swift in Sources */,
 				00C5A75E29D916C200907A91 /* StartAssembly.swift in Sources */,
+				00C5A7EB29EB2C6D00907A91 /* QiwiWebViewController.swift in Sources */,
 				00C5A74B29D5FB5C00907A91 /* StartRouter.swift in Sources */,
 				00C5A74D29D5FEF400907A91 /* StartInteractor.swift in Sources */,
 				00C5A76229DA6F2300907A91 /* StartCheckIDLanWorker.swift in Sources */,
